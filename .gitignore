@@ -1,0 +1,30 @@
+# Virtual environments
+.venv/
+venv/
+env/
+.venv-1/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IDE settings
+.vscode/
+.idea/
+
+# Large data files (over 50MB)
+data/raw/*.xlsx
+data/raw/*.csv
+!data/raw/.gitkeep
+
+# Analysis outputs (optional to ignore, but often kept out of Git if large)
+# outputs/
+
+# OS files
+.DS_Store
+Thumbs.db

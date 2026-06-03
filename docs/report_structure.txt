@@ -1,0 +1,62 @@
+[0] Normal: CANDIDATE’S DECLARATION
+[4] Body Text: I hereby certify that the work on the project entitled, ”Project Name -  Don’t  Use  short  names of  project”, in partial fulfillment of requirements for the award of Degree of  Bachelor of Technolog
+[6] Heading 2: (name)
+[9] Normal: SUPERVISOR’S DECLARATION
+[12] Body Text: This is to certify that the above statement made by the candidate is correct to the best of my knowledge.
+[15] Body Text: Faculty Supervisor Name:
+[16] Body Text: Signature:
+[22] Body Text: I am highly grateful to SUPERVISOR NAME, DESIGNATION, BML Munjal University, Gurugram, for providing supervision to carry out the seminar/case study from July-December 2022.
+[23] Body Text: (Name of the SUPERVISOR) has provided great help in carrying out my work and is acknowledged with reverential thanks. Without wise counsel and able guidance, it would have been impossible to complete 
+[24] Body Text: I would like to express thanks profusely to thank SUPERVISOR NAME, for stimulating me from time to time. I would also like to thank the entire team at BML Munjal University. I would also thank my frie
+[28] Heading 2: (name)
+[31] Normal: Figure No.	Figure Description	Page No.
+[34] Heading 2: Table No.	Table Description	Page No.
+[43] Normal: Abbreviation	Full Form
+[47] Body Text: SVM	Support Vector Machine
+[49] Normal: abbreviation	Full Form
+[51] Normal: abbreviation	Full Form
+[54] Heading 1: Introduction
+[59] Heading 1: Introduction to Project
+[61] Heading 2: Overview
+[64] Body Text: Software bug reports are an important source of information for software development and maintenance. During resource allocation, a project manager distributes time and effort for each project task an
+[65] Body Text: It has been investigated that research scholars spend a significant time of total research period on identifying the current and promising research areas. Even after choosing a spe- cific research are
+[66] Body Text: The core idea behind this work is to use an unsupervised technique (topic modeling) to identify the latent semantic patterns from the bibliographic database. It would answer the research questions viz
+[68] Heading 2: Existing System
+[71] Heading 2: User Requirement Analysis
+[74] Heading 2: Feasibility Study
+[78] Heading 1: Literature Review
+[80] Heading 2: Add the summaries of research work you referred for your  work. Either discuss the research in chronological order or by topic. Do cite all the research articles at the end of report in Bibliography s
+[81] Body Text: It has been very crucial task for researchers to identify the current and historical trends. Further, extraction from this information to focus on innovative methods and concepts also requires critica
+[82] Body Text: Topic modeling is an automated process which is based on algorithmic-based analysis [3, 4]. From a corpus, this method is used to identify the patterns. Further, semantic meaning is also added to the 
+[84] Heading 2: Comparison
+[87] Body Text: This section should have table where you need to compare the results from different prominent research of area of interest.
+[89] Heading 2: Objectives of Project (Must be clearly, precisely defined and Implemen- tation must be done.)
+[91] Body Text: This section should elaborate the objectives based on the gaps from the previous re- searchers.
+[95] Heading 1: Exploratory Data Analysis
+[97] Heading 2: Dataset
+[100] Body Text: Discussion on the dataset, scraping methods, pipelines etc.
+[103] Heading 2: Exploratory Data Analysis and Visualisations
+[106] Body Text: Details analysis of the data and you could include feature engineering into this section
+[109] Heading 2: Related Sections
+[113] Heading 1: Methodology
+[115] Body Text: This section discusses the methodology to develop the ML model. It may include the following but not limited to:
+[117] Heading 2: Introduction to Languages (Front End and Back End)
+[120] Heading 2: Any other Supporting Languages/ packages
+[123] Heading 2: User  characteristics
+[126] Heading 2: Constraints
+[129] Heading 2: Use Case Model/Flow Chart/DFDS
+[132] Heading 2: Database design
+[135] Heading 2: Table Structure
+[138] Heading 2: ER Diagrams
+[141] Heading 2: Assumptions and Dependencies
+[144] Heading 2: Algorithm discussion
+[147] List Paragraph: Implementation of Algorithm with Screen Shots/ Figures ( Each Figure must be numbered and Description of Figure must be provided)
+[151] Heading 1: Results
+[155] Normal: Conclusion and Future Scope
+[157] Heading 2: Conclusion
+[160] Heading 2: Future Scope
+[165] List Paragraph: Q. Mei and C. Zhai, “Discovering evolutionary theme patterns from text- an ex- ploration of temporal text mining,” in The Eleventh ACM SIGKDD International Conference on Knowledge Discovery and Data M
+[166] List Paragraph: J. L. Hurtado, A. Agarwal, and X. Zhu, “Topic discovery and future trend forecasting for texts,” Journal of Big Data, vol. 3, no. 7, pp. 1–21, 2016.
+[167] List Paragraph: K. R. Canini, L. Shi, and T. L. Griffiths, “Online inference of topics with latent dirichlet allocation.” Journal of Machine Learning Research, vol. 5, pp. 65–72, 2009. [Online]. Available: http://jml
+[168] List Paragraph: S. Saini, B. Kasliwal, and S. Bhatia, “Language identification using  g-lda,” International   Journal   of   Research   in   Engineering   and   Technology,    vol.   2, no. 11, pp. 42–45, nov 2013. [
+[169] List Paragraph: N. Evangelopoulos, X. Zhang, and V. R. Prybutok, “Latent semantic analysis: five methodological recommendations,” European Journal of Information Systems, vol. 21, no. 1, pp. 70–86, 2012.
