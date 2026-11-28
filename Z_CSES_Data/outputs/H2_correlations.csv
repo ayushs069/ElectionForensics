@@ -1,0 +1,6 @@
+Variable,r vs Turnout,p vs Turnout,r vs Incumbent,p vs Incumbent
+GDP Growth (Election Year),-0.0265,0.7403,0.1049,0.2208
+GDP Growth (Previous Year),-0.0298,0.7089,0.085,0.3214
+GDP per Capita (PPP),0.1554,0.0505,0.107,0.2118
+Unemployment Rate,-0.0837,0.2943,-0.1121,0.1907
+Inflation (Log),0.037,0.6434,0.0668,0.4364

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-10-24T19:29:57.313604",
+  "python_version": "3.13.2",
+  "numpy_version": "2.2.6",
+  "pandas_version": "2.3.3",
+  "scipy_version": "1.15.1",
+  "matplotlib_version": "3.10.6",
+  "args": {
+    "data": "D:\\sem-5_projects\\PRJ-3\\data\\processed\\final_20const_14states.csv",
+    "runs": 25,
+    "dpi": 600,
+    "seed": 42
+  },
+  "data_sha256": "25159606e08492da588f55c52b4997790d6a6ff75217a0b9769bbb77f0a008d8",
+  "pre_evm_years": [
+    1991,
+    1996,
+    1998,
+    1999
+  ],
+  "post_evm_years": [
+    2004,
+    2009,
+    2014,
+    2019
+  ],
+  "n_pre_total": 1972,
+  "n_post_total": 1847,
+  "mu_analytical": 0.19928893,
+  "pooled_stats": {
+    "n_pre": 1972,
+    "n_post": 1847,
+    "mean_pre": 0.11361567664921737,
+    "mean_post": 0.1327318952306083,
+    "delta_mu": 0.019116218581390926,
+    "rel_change_pct": 16.825335327985837,
+    "median_pre": 0.0884134527461788,
+    "median_post": 0.10920399920759737,
+    "delta_median": 0.020790546461418563,
+    "std_pre": 0.09744030786947633,
+    "std_post": 0.10584933074668344,
+    "ci95_pre_low": 0.10931495570884513,
+    "ci95_pre_high": 0.11791639758958962,
+    "ci95_post_low": 0.12790452353069615,
+    "ci95_post_high": 0.13755926693052045,
+    "cohens_d": 0.18816272967639838,
+    "ks_stat": 0.10063081297339802,
+    "ks_p": 7.25216649393607e-09,
+    "mannwhitney_u": 1619702.0,
+    "mannwhitney_p": 3.3017913424846043e-09,
+    "ttest_stat": -5.795239416090681,
+    "ttest_p": 7.386623673898921e-09,
+    "theoretical_mu": 0.19928892726346556
+  }
+}

@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #f1f5f9; }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer;
+  }
+  .sidebar-link.active {
+    @apply bg-blue-600 text-white shadow-md;
+  }
+  .sidebar-link:not(.active) {
+    @apply text-slate-500 hover:bg-slate-100 hover:text-slate-800;
+  }
+  .kpi-card {
+    @apply bg-white rounded-xl p-5 shadow-sm border border-slate-100 flex flex-col gap-1;
+  }
+  .section-title {
+    @apply text-lg font-semibold text-slate-800 mb-3;
+  }
+  .tab-btn {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-all border;
+  }
+  .tab-btn.active {
+    @apply bg-blue-600 text-white border-blue-600;
+  }
+  .tab-btn:not(.active) {
+    @apply bg-white text-slate-600 border-slate-200 hover:border-blue-300 hover:text-blue-600;
+  }
+  .info-box {
+    @apply bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-800;
+  }
+  .warn-box {
+    @apply bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800;
+  }
+  .math-block {
+    @apply bg-slate-900 text-green-400 rounded-lg p-4 font-mono text-sm;
+  }
+}

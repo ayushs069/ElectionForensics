@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Election Forensics Research Roadmap — RVM Project Edition</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --navy:    #1B2A4A;
+    --red:     #C0392B;
+    --blue:    #2166AC;
+    --steel:   #5B7FA6;
+    --orange:  #E88B3A;
+    --light:   #F4F7FB;
+    --border:  #D1DCF0;
+    --text:    #1a1a2e;
+    --muted:   #5a6a8a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 11.5pt;
+    line-height: 1.65;
+    color: var(--text);
+    background: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 50px 60px;
+  }
+
+  /* ── Cover ── */
+  .cover {
+    text-align: center;
+    border-bottom: 3px solid var(--navy);
+    padding-bottom: 30px;
+    margin-bottom: 36px;
+  }
+  .cover .badge {
+    display: inline-block;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+  .cover h1 {
+    font-size: 26pt;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .cover .subtitle {
+    font-size: 13pt;
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .cover .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: var(--muted);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--light);
+    border-left: 4px solid var(--blue);
+    border-radius: 4px;
+    padding: 22px 28px;
+    margin-bottom: 40px;
+  }
+  .toc h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .toc ol {
+    padding-left: 20px;
+  }
+  .toc li {
+    margin: 4px 0;
+    font-size: 10.5pt;
+  }
+  .toc a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── Modules ── */
+  .module {
+    margin-bottom: 46px;
+    page-break-inside: avoid;
+  }
+  .module-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 14px;
+    border-bottom: 1.5px solid var(--border);
+    padding-bottom: 10px;
+  }
+  .module-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  .module-title {
+    flex: 1;
+  }
+  .module-title h2 {
+    font-size: 15pt;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+  .module-title .outcome-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    color: var(--steel);
+    font-style: italic;
+  }
+
+  p { margin-bottom: 10px; }
+
+  /* ── Concept boxes ── */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .concept-box {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .concept-box h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .concept-box p {
+    font-size: 10pt;
+    margin: 0;
+    line-height: 1.5;
+    color: #2a2a3a;
+  }
+
+  /* ── Formula boxes ── */
+  .formula-box {
+    background: #fff8f8;
+    border: 1px solid #f0c0b0;
+    border-left: 4px solid var(--red);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10pt;
+    color: #3a0a00;
+  }
+  .formula-box .formula-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+
+  /* ── Code-style tags ── */
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5pt;
+    background: #eef2f8;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: var(--navy);
+  }
+
+  /* ── Lists ── */
+  ul, ol {
+    padding-left: 22px;
+    margin: 8px 0;
+  }
+  li { margin: 4px 0; font-size: 11pt; }
+
+  /* ── Highlight callout ── */
+  .callout {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--orange);
+    background: #fffbf5;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 10.5pt;
+  }
+  .callout strong { color: var(--orange); }
+
+  .callout-blue {
+    border-left-color: var(--blue);
+    background: #f4f8ff;
+  }
+  .callout-blue strong { color: var(--blue); }
+
+  .callout-red {
+    border-left-color: var(--red);
+    background: #fff4f4;
+  }
+  .callout-red strong { color: var(--red); }
+
+  /* ── Table ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+    margin: 14px 0;
+  }
+  th {
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--light); }
+
+  /* ── Section divider ── */
+  .section-divider {
+    text-align: center;
+    color: var(--border);
+    font-size: 18pt;
+    margin: 30px 0 20px;
+    letter-spacing: 6px;
+  }
+
+  /* ── Pipeline diagram ── */
+  .pipeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 14px 0;
+    align-items: center;
+  }
+  .pipe-step {
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 90px;
+  }
+  .pipe-arrow {
+    color: var(--steel);
+    font-size: 14pt;
+    padding: 0 5px;
+    font-weight: bold;
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { padding: 20px 30px; }
+    .module { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<div class="cover">
+  <div class="badge">Election Analysis Project — PRJ-3</div>
+  <h1>Election Forensics<br>Research Roadmap</h1>
+  <div class="subtitle">RVM-Based Anomaly Detection in Indian Parliamentary Elections<br>Aligned to Project Methodology &amp; Code</div>
+  <div class="meta">
+    Dataset: Indian Parliamentary Elections (14 States) &nbsp;|&nbsp;
+    Method: Random Voting Model (RVM) &nbsp;|&nbsp;
+    September 2026
+  </div>
+</div>
+
+<!-- ═══════════════ TOC ═══════════════ -->
+<div class="toc">
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#m1">Foundations of Election Forensics</a></li>
+    <li><a href="#m2">Electoral Systems &amp; Election Processes</a></li>
+    <li><a href="#m3">Electoral Data &amp; Data Preparation</a></li>
+    <li><a href="#m4">Exploratory Data Analysis (EDA)</a></li>
+    <li><a href="#m5">Statistical Election Forensics &amp; the RVM Framework</a></li>
+    <li><a href="#m6">Election Forensic Indicators</a></li>
+    <li><a href="#m7">Spatial Election Forensics</a></li>
+    <li><a href="#m8">Temporal &amp; Longitudinal Analysis</a></li>
+    <li><a href="#m9">Machine Learning for Election Forensics</a></li>
+    <li><a href="#m10">Advanced Forensic Modelling</a></li>
+    <li><a href="#m11">Digital Election Forensics &amp; Data Integrity</a></li>
+    <li><a href="#m12">Research Framework &amp; Real-World Application</a></li>
+  </ol>
+</div>
+
+<!-- ────────────────────────────────────── -->
+<!-- MODULE 1 -->
+<!-- ────────────────────────────────────── -->
+<div class="module" id="m1">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-title">
+      <h2>Foundations of Election Forensics</h2>
+      <div class="outcome-tag">Outcome: Understand what election forensics can and cannot establish.</div>
+    </div>
+  </div>
+
+  <p><strong>Election forensics</strong> is the application of statistical and computational methods to election data to detect patterns that are inconsistent with honest, competitive voting. It does <em>not</em> prove fraud — it identifies statistical anomalies that deviate from what is expected under a null model of fair elections.</p>
+
+  <div class="concept-grid">
+    <div class="concept-box">
+      <h4>What it Can Establish</h4>
+      <p>Whether empirical vote-margin distributions deviate significantly from theoretically expected distributions (like the RVM curve). It quantifies the size and direction of deviations.</p>
+    </div>
+    <div class="concept-box">
+      <h4>What it Cannot Establish</h4>
+      <p>The <em>cause</em> of anomalies. A high fraud score may reflect strategic voting, voter mobilisation, single-party dominance, or data recording errors — not necessarily manipulation.</p>
+    </div>
+    <div class="concept-box">
+      <h4>Anomaly vs. Evidence</h4>
+      <p>An anomaly is a statistically unexpected pattern. Evidence of manipulation requires corroboration from multiple independent sources (field audits, witness testimony, historical records).</p>
+    </div>
+    <div class="concept-box">
+      <h4>Project Application</h4>
+      <p>This project computes <em>fraud scores</em> (mean |z|) for 14 Indian states and flags those exceeding the threshold of 3.0. These are statistical flags, not accusations.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Ethical Principle:</strong> The project's fraud-score threshold (|z| &gt; 3.0) is a statistical convention — it means the observed distribution lies more than 3 standard deviations from the RVM prediction. Findings must be reported with appropriate epistemic humility.
+  </div>
+</div>
+
+<!-- MODULE 2 -->
+<div class="module" id="m2">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-title">
+      <h2>Electoral Systems &amp; Election Processes</h2>
+      <div class="outcome-tag">Outcome: Understand where anomalies can arise in the election pipeline.</div>
+    </div>
+  </div>
+
+  <p>This project focuses on <strong>First-Past-the-Post (FPTP)</strong> elections — the system used in Indian Lok Sabha (parliamentary) elections. Each constituency elects one representative; the candidate with the highest vote total wins regardless of majority.</p>
+
+  <div class="concept-grid">
+    <div class="concept-box">
+      <h4>Constituency Structure</h4>
+      <p>India's 543 Lok Sabha constituencies are grouped by state. The project uses 14 major states, each with ≥ 400 constituency-election records across multiple election cycles (1977–2019).</p>
+    </div>
+    <div class="concept-box">
+      <h4>Key Measured Quantities</h4>
+      <p><code>vv1</code> = total valid votes (voter turnout), <code>margin</code> = winner_votes − runner-up_votes, <code>winner_votes</code>, <code>runnerup_votes</code>. These are extracted at constituency level.</p>
+    </div>
+    <div class="concept-box">
+      <h4>Result Aggregation</h4>
+      <p>Candidate-level data (from CLEA and ECI) is aggregated to constituency level using <code>aggregate_to_constituency.py</code>, producing one row per constituency-election observation.</p>
+    </div>
+    <div class="concept-box">
+      <h4>Why FPTP Matters for Forensics</h4>
+      <p>Under FPTP, the vote margin M = winner − runner-up is the key competitive signal. The RVM model is analytically derived for multi-candidate FPTP races, making it directly applicable.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 3 -->
+<div class="module" id="m3">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-title">
+      <h2>Electoral Data &amp; Data Preparation</h2>
+      <div class="outcome-tag">Outcome: Build a clean, reproducible election dataset ready for analysis.</div>
+    </div>
+  </div>
+
+  <p>Reliable forensic analysis depends entirely on data quality. This project processes raw election data through a structured pipeline before any statistical analysis.</p>
+
+  <div class="callout callout-blue">
+    <strong>Project Dataset:</strong> <code>final_20const_14states.csv</code> — 14 Indian states, constituency-election records from 1977–2019. Columns: <code>state_n, yr, cst_n, vv1, winner_votes, runnerup_votes, margin, specific_margin, scaled_margin, scaled_specific_margin</code>
+  </div>
+
+  <h3 style="font-size:12pt; color:var(--navy); margin: 14px 0 8px;">Data Cleaning Steps Used in This Project</h3>
+  <table>
+    <tr><th>Step</th><th>Code Location</th><th>Rule Applied</th></tr>
+    <tr><td>Remove invalid turnout</td><td><code>load_data()</code></td><td>Keep rows where <code>vv1 &gt; 0</code></td></tr>
+    <tr><td>Remove impossible margins</td><td><code>load_data()</code></td><td>Keep <code>margin ≥ 0</code> and <code>margin ≤ vv1</code></td></tr>
+    <tr><td>Strip whitespace</td><td><code>india_rvm_analysis.py</code></td><td><code>state_n.str.strip()</code></td></tr>
+    <tr><td>Lowercase column names</td><td>All scripts</td><td><code>df.columns.str.strip().str.lower()</code></td></tr>
+    <tr><td>Minimum unit filter</td><td><code>load_data(min_units=50)</code></td><td>Exclude states with &lt; 50 records (too few for stable distributions)</td></tr>
+  </table>
+
+  <h3 style="font-size:12pt; color:var(--navy); margin: 14px 0 8px;">Derived Variables</h3>
+  <table>
+    <tr><th>Variable</th><th>Formula</th><th>Purpose</th></tr>
+    <tr><td>Specific Margin (µ)</td><td><code>µ = M / T = margin / vv1</code></td><td>Normalises margin by turnout — core forensic indicator</td></tr>
+    <tr><td>Scaled Specific Margin (x)</td><td><code>x = µ / ⟨µ⟩</code></td><td>Enables universal comparison across regions/countries</td></tr>
+    <tr><td>Scaled Margin</td><td><code>M / ⟨M⟩</code></td><td>Used in log-log distribution plots</td></tr>
+  </table>
+
+  <div class="formula-box">
+    <div class="formula-label">Key Derived Quantity — Specific Margin</div>
+    µ  =  M / T  =  (winner_votes − runner-up_votes) / total_valid_votes<br>
+    ⟨µ⟩  =  mean(µ)  over all constituencies in a state/country<br>
+    x  =  µ / ⟨µ⟩          (normalised: dimensionless, mean = 1)
+  </div>
+</div>
+
+<!-- MODULE 4 -->
+<div class="module" id="m4">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-title">
+      <h2>Exploratory Data Analysis (EDA)</h2>
+      <div class="outcome-tag">Outcome: Recognise unusual patterns before applying sophisticated models.</div>
+    </div>
+  </div>
+
+  <p>The project generates ten structured EDA plots (EDA1–EDA10) to understand the raw data before any modelling. Each plot answers a specific descriptive question.</p>
+
+  <table>
+    <tr><th>Plot</th><th>Question Answered</th><th>Chart Type</th><th>Key Insight</th></tr>
+    <tr><td>EDA1 (Fig 1)</td><td>How many constituency-election records per state?</td><td>Horizontal bar</td><td>UP has most records; Assam fewest. 400-record threshold line separates eligible states.</td></tr>
+    <tr><td>EDA2</td><td>How many constituencies per election year?</td><td>Bar chart (time series)</td><td>Reveals which years had by-elections or boundary changes.</td></tr>
+    <tr><td>EDA3</td><td>How is voter turnout (vv1) distributed?</td><td>Histogram + log-y histogram</td><td>Right-skewed; small constituencies visible in log-y scale.</td></tr>
+    <tr><td>EDA4</td><td>How are margin M and specific margin µ distributed?</td><td>Dual histogram</td><td>µ is more comparable across states than raw M (normalised by turnout).</td></tr>
+    <tr><td>EDA5</td><td>How does mean specific margin vary across states?</td><td>Horizontal bar (coloured by threshold)</td><td>States above/below all-India mean — red = higher competitiveness concern.</td></tr>
+    <tr><td>EDA6 (Fig 2)</td><td>How does mean µ change over election years?</td><td>Line + fill (with Emergency shading)</td><td>Post-Emergency (1977) shows a marked shift in µ. Emergency period (1975–77) visually contextualised.</td></tr>
+    <tr><td>EDA7 (Fig 4)</td><td>Does Indian data follow the theoretical P(µ) / F(x) curve?</td><td>Histogram vs. analytical line</td><td>India's scaled µ broadly follows F(x), with some heavy-tail deviation.</td></tr>
+    <tr><td>EDA8</td><td>Does the scaled margin follow the universal distribution?</td><td>Log-log scatter</td><td>Pooled India data compared to log-log power-law-like expected shape.</td></tr>
+    <tr><td>EDA9</td><td>How do margins vary by state (spread and outliers)?</td><td>Horizontal boxplot</td><td>States with wide IQR or many outliers signal high variance in competition.</td></tr>
+    <tr><td>EDA10</td><td>What is the winner vs. runner-up vote relationship?</td><td>Scatter with equality line</td><td>Points far above the 45° line represent surprise wins; very close margins cluster near the line.</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>Why EDA First?</strong> EDA identifies data-quality issues, outlier states, and structural breaks (e.g., the Emergency period) before any model is applied. It prevents modelling artefacts being mistaken for forensic signals.
+  </div>
+</div>
+
+<!-- MODULE 5 -->
+<div class="module" id="m5">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-title">
+      <h2>Statistical Election Forensics &amp; the RVM Framework</h2>
+      <div class="outcome-tag">Outcome: Understand the core quantitative method used to generate fraud scores.</div>
+    </div>
+  </div>
+
+  <p>This is the <strong>analytical heart of the project</strong>. The Random Voting Model (RVM) provides a theoretically derived null distribution for election margins under genuine competition. Deviations from this null distribution are quantified as a forensic fraud score.</p>
+
+  <h3 style="font-size:12.5pt; color:var(--navy); margin: 16px 0 8px;">5.1 The RVM Null Model</h3>
+  <p>The RVM models a genuinely competitive election: each candidate receives votes drawn from a random multinomial process with uniformly distributed support probabilities. For 3 candidates and large turnout T, the analytical PDF of the specific margin µ = M/T is:</p>
+
+  <div class="formula-box">
+    <div class="formula-label">Analytical PDF — Specific Margin (3 candidates, large T)</div>
+    P(µ)  =  [(1 − µ)(5 + 7µ)]  /  [(1 + µ)² (1 + 2µ)²]<br><br>
+    Theoretical mean:  ⟨µ⟩  ≈  0.1993   (computed numerically via scipy.integrate.quad)
+  </div>
+
+  <p>This formula is implemented in <code>india_rvm_analysis.py → P_mu(mu)</code> and <code>rvm_analysis.py → P_mu(mu)</code>.</p>
+
+  <h3 style="font-size:12.5pt; color:var(--navy); margin: 16px 0 8px;">5.2 The Universal Scaled Distribution F(x)</h3>
+  <p>Rescaling µ by its mean yields the <strong>universal function F(x)</strong> — a distribution that is theoretically identical for all genuinely competitive elections regardless of country, state, or election size. This is the key universality claim of the project.</p>
+
+  <div class="formula-box">
+    <div class="formula-label">Universal Scaled Distribution</div>
+    x  =  µ / ⟨µ⟩<br>
+    F(x)  =  ⟨µ⟩ · P(µ)  where µ = x · ⟨µ⟩<br><br>
+    If elections are genuinely competitive, empirical F(x) must collapse onto a single universal curve.<br>
+    Deviations from this curve → forensic signal.
+  </div>
+
+  <h3 style="font-size:12.5pt; color:var(--navy); margin: 16px 0 8px;">5.3 RVM Monte Carlo Simulation</h3>
+  <p>Because the analytical F(x) assumes large T, the project validates it with Monte Carlo simulation (<strong>RVM ensemble</strong>). For each state, 25 independent RVM runs simulate elections using the actual observed turnouts, but with randomly assigned vote shares:</p>
+
+  <div class="formula-box">
+    <div class="formula-label">Monte Carlo RVM — one run (rvm_once)</div>
+    For each constituency i with observed turnout T_i:<br>
+      1. Draw n_cand = 3 weights w_k ~ Uniform(0, 1)<br>
+      2. Normalise: p_k = w_k / Σw_k  (random support probabilities)<br>
+      3. Draw votes ~ Multinomial(T_i, p)<br>
+      4. margin_i  =  votes[0] − votes[1]  (after sorting descending)
+  </div>
+
+  <p>The ensemble of 25 runs produces a <strong>mean RVM curve</strong> and a <strong>±1σ uncertainty band</strong>. The actual data is then overlaid on this band.</p>
+
+  <h3 style="font-size:12.5pt; color:var(--navy); margin: 16px 0 8px;">5.4 Log-Spaced Histograms</h3>
+  <p>Because margin distributions span several orders of magnitude, all distributional plots use <strong>log-spaced bins</strong> with geometric midpoints:</p>
+
+  <div class="formula-box">
+    <div class="formula-label">Log Histogram (log_histogram function)</div>
+    bins   = np.logspace(log10(min), log10(max), n_bins+1)<br>
+    centers = sqrt(edges[i] · edges[i+1])   ← geometric midpoint<br>
+    density computed with np.histogram(..., density=True)
+  </div>
+
+  <h3 style="font-size:12.5pt; color:var(--navy); margin: 16px 0 8px;">5.5 Fraud Score (Mean |z|)</h3>
+  <p>The <strong>fraud score</strong> measures how much the empirical F(x) deviates from the RVM prediction in units of standard deviations:</p>
+
+  <div class="formula-box">
+    <div class="formula-label">Fraud Score Computation (plot_fraud_check)</div>
+    For each x-grid point x_i:<br>
+      z_i = |F_empirical(x_i) − F_RVM_mean(x_i)| / (σ_RVM(x_i) + ε)<br><br>
+    Fraud Score  =  mean_i(z_i)   over all valid x grid points<br><br>
+    Threshold: Fraud Score &gt; 3.0 → state is FLAGGED (⚠)
+  </div>
+
+  <div class="callout callout-red">
+    <strong>Statistical Note:</strong> The fraud score is a composite z-score, not a p-value. Setting the threshold at 3.0 (≈ p &lt; 0.003 for a single test) is conservative, but there is <em>no multiple-testing correction</em> applied when comparing 14 states simultaneously — an important limitation to disclose in any research paper.
+  </div>
+
+  <h3 style="font-size:12.5pt; color:var(--navy); margin: 16px 0 8px;">5.6 Three Core Diagnostic Plots</h3>
+  <p>For every state (and the pooled all-India dataset), three plots are generated:</p>
+
+  <table>
+    <tr><th>Figure</th><th>Plot</th><th>What It Shows</th></tr>
+    <tr><td>Fig A</td><td>Scaled Margin f(M/⟨M⟩)</td><td>Does the overall margin distribution match RVM? Log-log plot of data vs. RVM mean ± band.</td></tr>
+    <tr><td>Fig B</td><td>Universal F(x)</td><td>Does the scaled specific margin collapse onto the universal curve? Data vs. analytical F(x) and RVM.</td></tr>
+    <tr><td>Fig C</td><td>Deviation Check (fraud check)</td><td>Side-by-side panels A+B with fraud score annotated in the corner. Green ✓ or Red ⚠.</td></tr>
+  </table>
+</div>
+
+<!-- MODULE 6 -->
+<div class="module" id="m6">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-title">
+      <h2>Election Forensic Indicators</h2>
+      <div class="outcome-tag">Outcome: A collection of measurable forensic indicators used in this project.</div>
+    </div>
+  </div>
+
+  <p>Rather than relying on a single statistical trick, a robust analysis uses <em>multiple indicators</em>. This project explicitly implements or discusses the following:</p>
+
+  <div class="concept-grid">
+    <div class="concept-box">
+      <h4>1. Specific Margin Distribution</h4>
+      <p>The distribution of µ = M/T across all constituencies. The key forensic indicator: genuine elections follow P(µ) analytically. Significant deviations indicate manipulation potential.</p>
+    </div>
+    <div class="concept-box">
+      <h4>2. Scaled Margin Distribution</h4>
+      <p>f(M/⟨M⟩) in log-log space. Countries and states with clean elections collapse to the same universal shape. Used in Plot A of the fraud check.</p>
+    </div>
+    <div class="concept-box">
+      <h4>3. Turnout Anomalies</h4>
+      <p>EDA3 plots the distribution of vv1. Unusual spikes or gaps (especially at round numbers) can indicate stuffing or suppression. Log-y scale reveals tail structure.</p>
+    </div>
+    <div class="concept-box">
+      <h4>4. Mean Specific Margin by State</h4>
+      <p>EDA5 (Fig 3) shows ⟨µ⟩ per state vs. the theoretical mean (0.1993). States far below the theoretical mean may have suspiciously narrow margins (proximity to 50%).</p>
+    </div>
+    <div class="concept-box">
+      <h4>5. Temporal Trend in ⟨µ⟩</h4>
+      <p>EDA6 (Fig 2) tracks mean µ over election years. Sudden jumps or drops correlated with political events (e.g. Emergency 1975–77) are highlighted.</p>
+    </div>
+    <div class="concept-box">
+      <h4>6. Winner vs. Runner-up Scatter</h4>
+      <p>EDA10 plots winner_votes vs. runnerup_votes. Points far from the 45° line signal either landslides or near-ties, both of which can indicate different fraud modes.</td></p>
+    </div>
+    <div class="concept-box">
+      <h4>7. Fraud Score (mean |z|)</h4>
+      <p>The primary composite indicator. Aggregates pointwise deviations of empirical F(x) from the RVM band into a single scalar per state. Threshold: 3.0 σ.</p>
+    </div>
+    <div class="concept-box">
+      <h4>8. Deviation from Theoretical ⟨µ⟩</h4>
+      <p>Computed in compare_world_vs_india.py (Q14): ⟨µ⟩_empirical − ⟨µ⟩_theory. States with large positive deviations have systematically higher-than-theoretical margins.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Note on Benford's Law:</strong> Benford's Law (anomalous digit distribution in leading digits of vote counts) is <em>not used</em> in this project. Its applicability to election data is heavily debated: vote counts are bounded (0 to T) and often do not span multiple orders of magnitude, violating the key assumption. The RVM framework is better suited to this dataset.
+  </div>
+</div>
+
+<!-- MODULE 7 -->
+<div class="module" id="m7">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-title">
+      <h2>Spatial Election Forensics</h2>
+      <div class="outcome-tag">Outcome: Map anomalies geographically; understand spatial clustering.</div>
+    </div>
+  </div>
+
+  <p>This project implements spatial analysis at the <strong>state level</strong> (rather than constituency or polling-station level) due to data aggregation. The following spatial questions are explicitly addressed:</p>
+
+  <div class="concept-grid">
+    <div class="concept-box">
+      <h4>State-Level Clustering</h4>
+      <p>EDA1 and the fraud bar chart (Fig in outputs/) visualise which states cluster as high-fraud-score vs. low-fraud-score, enabling geographic identification of anomaly hotspots.</p>
+    </div>
+    <div class="concept-box">
+      <h4>All-States F(x) Overlay</h4>
+      <p><code>plot_all_states_Fx()</code> overlays F(x) curves from all 14 states on a single log-log plot. States whose curves diverge from the universal curve are visually identifiable.</p>
+    </div>
+    <div class="concept-box">
+      <h4>World vs. India Comparison</h4>
+      <p><code>compare_world_vs_india.py</code> provides a cross-national spatial comparison. India's states are positioned relative to world countries on fraud scores and mean µ.</p>
+    </div>
+    <div class="concept-box">
+      <h4>Coverage vs. Mean µ Bubble Map</h4>
+      <p>Q16 in the comparison script creates a bubble plot where position = (n_units, ⟨µ⟩) and bubble size ∝ fraud score — effectively a 3D spatial diagnostic.</p>
+    </div>
+  </div>
+
+  <p>Future extensions of this project could incorporate constituency-level shapefiles (from Datameet or ECI GIS portal) to produce choropleth maps of µ or fraud scores, and formal spatial autocorrelation (Moran's I) analysis to test whether high-fraud-score areas cluster geographically.</p>
+</div>
+
+<!-- MODULE 8 -->
+<div class="module" id="m8">
+  <div class="module-header">
+    <div class="module-num">8</div>
+    <div class="module-title">
+      <h2>Temporal &amp; Longitudinal Analysis</h2>
+      <div class="outcome-tag">Outcome: Distinguish persistent electoral patterns from unusual changes over time.</div>
+    </div>
+  </div>
+
+  <p>The dataset spans elections from <strong>1977 to 2019</strong>, enabling genuine longitudinal analysis. The project implements temporal indicators at both the national and state level.</p>
+
+  <table>
+    <tr><th>Analysis</th><th>Implementation</th><th>Key Finding</th></tr>
+    <tr><td>Mean µ over years (EDA6 / Fig 2)</td><td><code>india_rvm_analysis.py → run_eda()</code></td><td>Tracked election-cycle to election-cycle. Emergency period (1975–77) highlighted. Post-liberalisation shifts visible.</td></tr>
+    <tr><td>Constituencies per year (EDA2)</td><td><code>india_rvm_analysis.py → run_eda()</code></td><td>Shows delimitation changes (boundary redrawn years) and by-elections that inflate counts.</td></tr>
+    <tr><td>State year range</td><td><code>yr_min / yr_max in summary.csv</code></td><td>Not all states have identical longitudinal coverage. Uneven coverage is a confound for cross-state comparison.</td></tr>
+    <tr><td>Emergency period shading</td><td><code>eda6_scientific.py</code></td><td>1975–1977 period shaded in amber — historically corresponds to cancelled elections and authoritarian governance, providing context for any µ anomaly there.</td></tr>
+  </table>
+
+  <div class="callout callout-blue">
+    <strong>Key Temporal Insight:</strong> EDA6 (Fig 2) shows the <em>trend</em> of ⟨µ⟩ against the theoretical reference line (0.1993). Periods where observed ⟨µ⟩ consistently exceeds the theoretical value suggest competitive patterns unlike the RVM baseline. Periods of sudden deviation warrant investigation against historical political events.
+  </div>
+</div>
+
+<!-- MODULE 9 -->
+<div class="module" id="m9">
+  <div class="module-header">
+    <div class="module-num">9</div>
+    <div class="module-title">
+      <h2>Machine Learning for Election Forensics</h2>
+      <div class="outcome-tag">Outcome: Understand how ML complements (not replaces) the statistical RVM approach.</div>
+    </div>
+  </div>
+
+  <p>This project does <strong>not rely on ML as the primary tool</strong> — it uses a theoretically derived statistical model (RVM) as the null hypothesis. ML would complement this in the following ways:</p>
+
+  <div class="concept-grid">
+    <div class="concept-box">
+      <h4>Unsupervised Clustering</h4>
+      <p>K-means or DBSCAN on features [⟨µ⟩, fraud_score, n_units, yr_min] could automatically group states into "suspicious" vs. "clean" clusters without defining a manual threshold.</p>
+    </div>
+    <div class="concept-box">
+      <h4>PCA for Feature Reduction</h4>
+      <p>If additional forensic indicators are added (EDA1–10 metrics, temporal features), PCA could reduce dimensionality and reveal which combinations of indicators drive anomaly flags.</p>
+    </div>
+    <div class="concept-box">
+      <h4>Isolation Forest</h4>
+      <p>Could score each constituency-year record as an anomaly based on its (µ, T, M) tuple. Particularly useful for identifying <em>specific years</em> of anomalous behaviour within a generally clean state.</p>
+    </div>
+    <div class="concept-box">
+      <h4>Autoencoder Anomaly Detection</h4>
+      <p>Train on the F(x) histogram vectors of "known clean" states/countries. States producing high reconstruction error would be flagged — learning the normal pattern automatically.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <strong>Important Limitation of ML Here:</strong> There is no labeled training set of "definitely fraudulent" elections — the ground truth is unknown. Any supervised approach would require expert-labeled cases. Unsupervised methods are therefore more honest, but their outputs are harder to interpret.
+  </div>
+
+  <p>The RVM Monte Carlo simulation itself can be considered a type of <em>generative model</em>: it learns the data-generating process from first principles rather than from examples. This is more defensible in a scientific context.</p>
+</div>
+
+<!-- MODULE 10 -->
+<div class="module" id="m10">
+  <div class="module-header">
+    <div class="module-num">10</div>
+    <div class="module-title">
+      <h2>Advanced Forensic Modelling</h2>
+      <div class="outcome-tag">Outcome: Move from simple anomaly detection toward statistically defensible inference.</div>
+    </div>
+  </div>
+
+  <p>The current project implements a solid baseline. The following extensions represent the frontier of election forensics methodology:</p>
+
+  <table>
+    <tr><th>Technique</th><th>How It Applies to This Project</th><th>Benefit</th></tr>
+    <tr><td>Mixture Models</td><td>Model the empirical µ distribution as a mixture of a "clean" RVM component and an "anomalous" component. Estimate the anomalous fraction.</td><td>Provides interpretable fraud proportion estimate rather than a binary flag.</td></tr>
+    <tr><td>Bayesian Approaches</td><td>Place a prior on the expected mean µ (theoretical RVM); update it with data. The posterior credible interval reveals whether India's observed µ is consistent with honest elections.</td><td>Handles small samples better; naturally quantifies uncertainty.</td></tr>
+    <tr><td>Hierarchical Models</td><td>Model state-level µ distributions as draws from an all-India hyperprior. Partially pools information across states — avoids over-fitting rare states.</td><td>Stable estimates for states with few constituencies.</td></tr>
+    <tr><td>Sensitivity Analysis</td><td>Re-run fraud scoring with n_cand = 2, 4, 5 instead of 3. Check whether flagged states remain flagged across different candidate-count assumptions.</td><td>Tests robustness of the 3-candidate assumption in RVM.</td></tr>
+    <tr><td>Robust Statistics</td><td>Replace the mean z-score with a trimmed mean or median z-score to reduce sensitivity to extreme histogram bins in the tails of F(x).</td><td>More robust fraud score less influenced by sparse tail data points.</td></tr>
+    <tr><td>Synthetic Controls</td><td>For a specific flagged election year in a state, construct a synthetic "control" state from a weighted combination of clean states with similar demographic features.</td><td>Causal interpretation: what would the margin distribution have looked like without the anomaly?</td></tr>
+  </table>
+</div>
+
+<!-- MODULE 11 -->
+<div class="module" id="m11">
+  <div class="module-header">
+    <div class="module-num">11</div>
+    <div class="module-title">
+      <h2>Digital Election Forensics &amp; Data Integrity</h2>
+      <div class="outcome-tag">Outcome: Ensure computational reproducibility and distinguish statistical from cybersecurity evidence.</div>
+    </div>
+  </div>
+
+  <p>This module covers how data integrity, provenance, and reproducibility are handled in this project — and where the boundaries lie.</p>
+
+  <div class="concept-grid">
+    <div class="concept-box">
+      <h4>Data Provenance</h4>
+      <p>Raw data originates from the <strong>Constituency-Level Elections Archive (CLEA)</strong> and <strong>Election Commission of India (ECI)</strong> official results. The data pipeline is: raw CSV → <code>clean_clea_data.py</code> → <code>aggregate_to_constituency.py</code> → <code>processed/finallllllll.csv</code>.</p>
+    </div>
+    <div class="concept-box">
+      <h4>Reproducibility</h4>
+      <p>All random seeds are set explicitly (<code>seed=42</code> in RVM ensemble). The 25-run ensemble is deterministic given the same seed. Scripts accept command-line arguments for full parameter traceability. Outputs are saved with timestamps in directory names.</p>
+    </div>
+    <div class="concept-box">
+      <h4>Audit Trail</h4>
+      <p>The <code>summary.csv</code> file records for each state: n_units, yr_min, yr_max, mean_T, mean_M, mean_µ, mu_analytical, fraud_score, flagged. This serves as a compact, reviewable audit document.</p>
+    </div>
+    <div class="concept-box">
+      <h4>Statistical vs. Cybersecurity Evidence</h4>
+      <p>A high fraud score in this project means the <em>margin distribution</em> deviates from RVM predictions. This is NOT evidence of hacking, EVM tampering, or server breaches — those would require digital forensic investigation of voting hardware and software logs.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <strong>Critical Distinction:</strong> Statistical anomalies (what this project detects) and cybersecurity incidents (e.g., EVM vulnerabilities) are entirely separate evidence streams. Do not conflate them. A high fraud score might reflect aggressive genuine voting patterns (e.g., one-party dominance), not digital manipulation.
+  </div>
+</div>
+
+<!-- MODULE 12 -->
+<div class="module" id="m12">
+  <div class="module-header">
+    <div class="module-num">12</div>
+    <div class="module-title">
+      <h2>Research Framework &amp; Real-World Application</h2>
+      <div class="outcome-tag">Outcome: A complete, reproducible research pipeline from raw data to publishable findings.</div>
+    </div>
+  </div>
+
+  <p>This final module synthesises the full project pipeline — from raw data to publication-quality figures and fraud scores — into a unified research framework.</p>
+
+  <h3 style="font-size:12pt; color:var(--navy); margin: 14px 0 8px;">12.1 Complete Project Pipeline</h3>
+  <div class="pipeline">
+    <div class="pipe-step">Raw Data<br>(CLEA / ECI)</div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Clean &amp;<br>Aggregate</div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">EDA<br>(10 plots)</div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">RVM<br>Simulation</div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Fraud<br>Scoring</div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Report<br>Figures</div>
+  </div>
+
+  <h3 style="font-size:12pt; color:var(--navy); margin: 14px 0 8px;">12.2 Publication Figures (600 dpi)</h3>
+  <table>
+    <tr><th>Figure</th><th>Script</th><th>Description</th></tr>
+    <tr><td>Fig 1</td><td><code>eda1_improved.py</code></td><td>Constituency records per state — bar chart with 400-threshold line</td></tr>
+    <tr><td>Fig 2</td><td><code>eda6_scientific.py</code></td><td>Mean ⟨µ⟩ over election years — line with Emergency shading</td></tr>
+    <tr><td>Fig 3</td><td><code>generate_report_figs.py</code></td><td>Mean specific margin by state — neutral bar chart with RVM theoretical line</td></tr>
+    <tr><td>Fig 4</td><td><code>generate_report_figs.py</code></td><td>All-India: scaled µ histogram vs. analytical F(x) curve (linear scale)</td></tr>
+    <tr><td>Fig 5</td><td><code>generate_report_figs.py</code></td><td>Pooled All-India: Universal F(x) (log-log) vs. RVM and analytical</td></tr>
+    <tr><td>Fig 6</td><td><code>generate_report_figs.py</code></td><td>Uttar Pradesh: Universal F(x) — state-level forensic diagnostic</td></tr>
+    <tr><td>Fig 7</td><td><code>generate_report_figs.py</code></td><td>West Bengal: Universal F(x) — state-level forensic diagnostic</td></tr>
+  </table>
+
+  <h3 style="font-size:12pt; color:var(--navy); margin: 14px 0 8px;">12.3 Reporting Uncertainty Honestly</h3>
+  <ul>
+    <li>The <strong>±1σ RVM band</strong> in every F(x) plot visualises model uncertainty from the 25-run ensemble.</li>
+    <li>The fraud score threshold of 3.0 is a <strong>convention</strong>, not a proven detection boundary.</li>
+    <li>States with small n_units (close to the 50-record minimum) have <strong>noisier distribution fits</strong> and their fraud scores have higher variance.</li>
+    <li>The 3-candidate assumption in P(µ) is a <strong>simplification</strong>; India regularly has 5–10+ candidates per constituency.</li>
+    <li>No adjustment for <strong>multiple testing</strong> across 14 states is applied.</li>
+  </ul>
+
+  <h3 style="font-size:12pt; color:var(--navy); margin: 14px 0 8px;">12.4 Research Questions Addressed</h3>
+  <p>The project answers the following research questions:</p>
+  <ol>
+    <li>Do Indian parliamentary elections follow the universal RVM margin distribution F(x)?</li>
+    <li>Which states show statistically significant deviations from the expected distribution?</li>
+    <li>How do Indian states compare to world countries on the same forensic indicators?</li>
+    <li>Has the competitive structure of Indian elections (as captured by ⟨µ⟩) changed over time?</li>
+    <li>Is there evidence of a geographic clustering of anomalous states?</li>
+  </ol>
+
+  <div class="callout callout-blue">
+    <strong>PhD-Level Extension:</strong> A publishable extension would replace the 3-candidate analytical P(µ) with a flexible mixture model fitted to the actual candidate-count distribution per constituency. A Bayesian hierarchical version would partially pool information across states. Sensitivity to the minimum-units threshold (currently 50) should be characterised via a robustness table.
+  </div>
+
+  <h3 style="font-size:12pt; color:var(--navy); margin: 14px 0 8px;">12.5 Summary of Forensic Outputs</h3>
+  <table>
+    <tr><th>Output</th><th>File</th><th>Description</th></tr>
+    <tr><td>Fraud scores table</td><td><code>outputs/rvm_outputs_india/summary.csv</code></td><td>One row per state: n_units, mean_µ, fraud_score, flagged</td></tr>
+    <tr><td>Fraud bar chart</td><td><code>outputs/rvm_outputs_india/fraud_barchart.png</code></td><td>Horizontal bar chart ranked by fraud score; red = flagged</td></tr>
+    <tr><td>Per-state plots</td><td><code>outputs/rvm_outputs_india/per_state/</code></td><td>3 plots per state (scaled margin, F(x), fraud check)</td></tr>
+    <tr><td>Pooled plots</td><td><code>outputs/rvm_outputs_india/pooled/</code></td><td>All-India aggregate analysis (4 plots)</td></tr>
+    <tr><td>Publication figures</td><td><code>outputs/india/report_600dpi_images/</code></td><td>7 publication-quality 600 dpi figures (Fig 1–7)</td></tr>
+    <tr><td>EDA plots</td><td><code>outputs/rvm_outputs_india/eda/</code></td><td>EDA1–EDA10 exploratory plots</td></tr>
+    <tr><td>World comparison</td><td><code>src/plots/Q01–Q16_*.png</code></td><td>16 comparative plots: world vs. India on all key indicators</td></tr>
+  </table>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="section-divider">· · ·</div>
+<div style="text-align:center; font-family:'Inter', sans-serif; font-size:9pt; color:var(--muted); margin-top:20px;">
+  <p>Election Forensics Research Roadmap — PRJ-3 &nbsp;|&nbsp; RVM-Based Election Anomaly Detection</p>
+  <p>Generated September 2026 &nbsp;|&nbsp; Project Repository: <code>d:\sem-5_projects\PRJ-3</code></p>
+</div>
+
+</body>
+</html>

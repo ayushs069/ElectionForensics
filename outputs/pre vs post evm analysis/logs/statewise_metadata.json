@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-10-18T16:00:52.246111",
+  "python_version": "3.13.2",
+  "numpy_version": "2.2.6",
+  "pandas_version": "2.3.3",
+  "args": {
+    "pre_data": "D:\\sem-5_projects\\PRJ-3\\outputs\\pre vs post evm analysis\\data\\data_pre_evm.csv",
+    "post_data": "D:\\sem-5_projects\\PRJ-3\\outputs\\pre vs post evm analysis\\data\\data_post_evm.csv",
+    "runs": 25,
+    "dpi": 300,
+    "seed": 42
+  },
+  "pre_csv_sha256": "dfb44090da35bfc84b5654c48000ba008af7d3561a01f4c668953f21d20e2424",
+  "post_csv_sha256": "bf8b1fb8244403f0785e1c43e23e85237601958578fb42c9e24a97863b397371",
+  "states_count": 14,
+  "states_list": [
+    "ANDHRA PRADESH",
+    "ASSAM",
+    "BIHAR",
+    "GUJARAT",
+    "KARNATAKA",
+    "KERALA",
+    "MADHYA PRADESH",
+    "MAHARASHTRA",
+    "ODISHA",
+    "PUNJAB",
+    "RAJASTHAN",
+    "TAMIL NADU",
+    "UTTAR PRADESH",
+    "WEST BENGAL"
+  ],
+  "theoretical_mu_mean": 0.19928893,
+  "figures_generated": [
+    "andhra_pradesh_pre_vs_post_rvm.png",
+    "assam_pre_vs_post_rvm.png",
+    "bihar_pre_vs_post_rvm.png",
+    "gujarat_pre_vs_post_rvm.png",
+    "karnataka_pre_vs_post_rvm.png",
+    "kerala_pre_vs_post_rvm.png",
+    "madhya_pradesh_pre_vs_post_rvm.png",
+    "maharashtra_pre_vs_post_rvm.png",
+    "odisha_pre_vs_post_rvm.png",
+    "punjab_pre_vs_post_rvm.png",
+    "rajasthan_pre_vs_post_rvm.png",
+    "tamil_nadu_pre_vs_post_rvm.png",
+    "uttar_pradesh_pre_vs_post_rvm.png",
+    "west_bengal_pre_vs_post_rvm.png"
+  ]
+}

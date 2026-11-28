@@ -1,0 +1,12 @@
+Feature,Pearson r,p-value,OLS slope,Significant
+Low Education %,-0.555,0.0,-0.0084,***
+Hispanic %,-0.38,0.0,-0.0024,***
+Diversity Index,-0.363,0.0,-0.1763,***
+Black %,-0.164,0.0,-0.001,***
+Log Pop Density,-0.142,0.0,-0.0078,***
+Gini Index,-0.123,0.0,-0.2847,***
+Resources/Constr %,-0.04,0.026,-0.0008,*
+Log Median Income,0.275,0.0,0.0941,***
+Higher Education %,0.333,0.0,0.0028,***
+Mgmt/Prof Occ %,0.334,0.0,0.004,***
+White %,0.452,0.0,0.002,***

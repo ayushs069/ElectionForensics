@@ -1,0 +1,27 @@
+[
+  {
+    "n_pre":2455,
+    "n_post":2296,
+    "mean_pre":0.122272112,
+    "mean_post":0.132468486,
+    "delta_mu":0.0101963741,
+    "rel_change_pct":8.3390839689,
+    "median_pre":0.0942514849,
+    "median_post":0.1069346879,
+    "delta_median":0.012683203,
+    "std_pre":0.1037384602,
+    "std_post":0.1073186716,
+    "ci95_pre_low":0.1181684638,
+    "ci95_pre_high":0.1263757601,
+    "ci95_post_low":0.1280786791,
+    "ci95_post_high":0.1368582929,
+    "cohens_d":0.0966629337,
+    "ks_stat":0.0573339271,
+    "ks_p":0.0007758115,
+    "mannwhitney_u":2648668.0,
+    "mannwhitney_p":0.0003290542,
+    "ttest_stat":-3.3257230807,
+    "ttest_p":0.0008886586,
+    "theoretical_mu":0.1992889273
+  }
+]

@@ -1,0 +1,7 @@
+Variable,r,Interpretation
+Age,0.0971,Positive → more turnout
+Education,0.0898,Positive → more turnout
+Income Quintile,0.0783,Positive → more turnout
+Employed (vs not),0.0337,Positive → more turnout
+Unemployed (vs not),-0.0531,Negative → less turnout
+Gender (Female=2),-0.0216,Negative → less turnout

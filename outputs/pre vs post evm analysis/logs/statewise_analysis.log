@@ -1,0 +1,83 @@
+2026-10-18 16:00:19,513  INFO  ======================================================================
+2026-10-18 16:00:19,513  INFO    State-Wise RVM Analysis: Pre-EVM vs Post-EVM (14 States)
+2026-10-18 16:00:19,513  INFO  ======================================================================
+2026-10-18 16:00:19,513  INFO    Pre-EVM dataset  : D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\data\data_pre_evm.csv
+2026-10-18 16:00:19,513  INFO    Post-EVM dataset : D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\data\data_post_evm.csv
+2026-10-18 16:00:19,514  INFO    RVM runs/state   : 25  |  DPI: 300  |  Seed: 42
+2026-10-18 16:00:19,565  INFO  Loaded Pre-EVM rows: 6,110 | Post-EVM rows: 1,847
+2026-10-18 16:00:19,566  INFO  Validating pre-EVM and post-EVM datasets...
+2026-10-18 16:00:19,567  INFO  Pre-EVM years present (13): [np.int64(1951), np.int64(1957), np.int64(1962), np.int64(1967), np.int64(1971), np.int64(1977), np.int64(1980), np.int64(1984), np.int64(1989), np.int64(1991), np.int64(1996), np.int64(1998), np.int64(1999)]
+2026-10-18 16:00:19,568  INFO  Post-EVM years present (4): [np.int64(2004), np.int64(2009), np.int64(2014), np.int64(2019)]
+2026-10-18 16:00:19,571  INFO  All 14 states match perfectly across pre-EVM and post-EVM periods: ['ANDHRA PRADESH', 'ASSAM', 'BIHAR', 'GUJARAT', 'KARNATAKA', 'KERALA', 'MADHYA PRADESH', 'MAHARASHTRA', 'ODISHA', 'PUNJAB', 'RAJASTHAN', 'TAMIL NADU', 'UTTAR PRADESH', 'WEST BENGAL']
+2026-10-18 16:00:19,610  INFO    ✓ Election year audit saved: D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\tables\statewise_election_year_audit.csv
+2026-10-18 16:00:19,611  INFO    ANDHRA PRADESH  : N_pre= 512, N_post= 151 -> Sufficient
+2026-10-18 16:00:19,612  INFO    ASSAM           : N_pre= 130, N_post=  56 -> Adequate (Marginal Post-EVM Sample)
+2026-10-18 16:00:19,613  INFO    BIHAR           : N_pre= 678, N_post= 160 -> Sufficient
+2026-10-18 16:00:19,614  INFO    GUJARAT         : N_pre= 285, N_post= 104 -> Sufficient
+2026-10-18 16:00:19,615  INFO    KARNATAKA       : N_pre= 335, N_post= 112 -> Sufficient
+2026-10-18 16:00:19,616  INFO    KERALA          : N_pre= 243, N_post=  80 -> Sufficient
+2026-10-18 16:00:19,616  INFO    MADHYA PRADESH  : N_pre= 491, N_post= 116 -> Sufficient
+2026-10-18 16:00:19,617  INFO    MAHARASHTRA     : N_pre= 613, N_post= 192 -> Sufficient
+2026-10-18 16:00:19,618  INFO    ODISHA          : N_pre= 256, N_post=  84 -> Sufficient
+2026-10-18 16:00:19,619  INFO    PUNJAB          : N_pre= 162, N_post=  52 -> Adequate (Marginal Post-EVM Sample)
+2026-10-18 16:00:19,620  INFO    RAJASTHAN       : N_pre= 304, N_post= 100 -> Sufficient
+2026-10-18 16:00:19,623  INFO    TAMIL NADU      : N_pre= 524, N_post= 155 -> Sufficient
+2026-10-18 16:00:19,625  INFO    UTTAR PRADESH   : N_pre=1071, N_post= 317 -> Sufficient
+2026-10-18 16:00:19,626  INFO    WEST BENGAL     : N_pre= 506, N_post= 168 -> Sufficient
+2026-10-18 16:00:19,643  INFO    ✓ Data sufficiency report saved: D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\tables\statewise_data_sufficiency_report.csv
+2026-10-18 16:00:19,643  INFO  All 14 states have robust, sufficient sample sizes (N >= 50) in both epochs!
+2026-10-18 16:00:19,643  INFO  
+Generating 14 state-wise comparison figures...
+2026-10-18 16:00:19,643  INFO  [ 1/14] Processing ANDHRA PRADESH ...
+2026-10-18 16:00:23,344  INFO         Saved: andhra_pradesh_pre_vs_post_rvm.png & andhra_pradesh_pre_vs_post_rvm.pdf
+2026-10-18 16:00:23,344  INFO         Pre N=512, Post N=151, Pre mu=0.1568, Post mu=0.0943, Delta=-0.0625
+2026-10-18 16:00:23,344  INFO  [ 2/14] Processing ASSAM ...
+2026-10-18 16:00:25,797  INFO         Saved: assam_pre_vs_post_rvm.png & assam_pre_vs_post_rvm.pdf
+2026-10-18 16:00:25,797  INFO         Pre N=130, Post N=56, Pre mu=0.1877, Post mu=0.1155, Delta=-0.0722
+2026-10-18 16:00:25,798  INFO  [ 3/14] Processing BIHAR ...
+2026-10-18 16:00:28,432  INFO         Saved: bihar_pre_vs_post_rvm.png & bihar_pre_vs_post_rvm.pdf
+2026-10-18 16:00:28,432  INFO         Pre N=678, Post N=160, Pre mu=0.1798, Post mu=0.1395, Delta=-0.0402
+2026-10-18 16:00:28,432  INFO  [ 4/14] Processing GUJARAT ...
+2026-10-18 16:00:30,615  INFO         Saved: gujarat_pre_vs_post_rvm.png & gujarat_pre_vs_post_rvm.pdf
+2026-10-18 16:00:30,615  INFO         Pre N=285, Post N=104, Pre mu=0.1619, Post mu=0.1772, Delta=+0.0152
+2026-10-18 16:00:30,615  INFO  [ 5/14] Processing KARNATAKA ...
+2026-10-18 16:00:32,636  INFO         Saved: karnataka_pre_vs_post_rvm.png & karnataka_pre_vs_post_rvm.pdf
+2026-10-18 16:00:32,636  INFO         Pre N=335, Post N=112, Pre mu=0.1800, Post mu=0.0931, Delta=-0.0869
+2026-10-18 16:00:32,636  INFO  [ 6/14] Processing KERALA ...
+2026-10-18 16:00:35,596  INFO         Saved: kerala_pre_vs_post_rvm.png & kerala_pre_vs_post_rvm.pdf
+2026-10-18 16:00:35,596  INFO         Pre N=243, Post N=80, Pre mu=0.0949, Post mu=0.0829, Delta=-0.0120
+2026-10-18 16:00:35,596  INFO  [ 7/14] Processing MADHYA PRADESH ...
+2026-10-18 16:00:37,936  INFO         Saved: madhya_pradesh_pre_vs_post_rvm.png & madhya_pradesh_pre_vs_post_rvm.pdf
+2026-10-18 16:00:37,936  INFO         Pre N=491, Post N=116, Pre mu=0.1710, Post mu=0.1762, Delta=+0.0053
+2026-10-18 16:00:37,936  INFO  [ 8/14] Processing MAHARASHTRA ...
+2026-10-18 16:00:39,992  INFO         Saved: maharashtra_pre_vs_post_rvm.png & maharashtra_pre_vs_post_rvm.pdf
+2026-10-18 16:00:39,993  INFO         Pre N=613, Post N=192, Pre mu=0.1922, Post mu=0.1352, Delta=-0.0570
+2026-10-18 16:00:39,993  INFO  [ 9/14] Processing ODISHA ...
+2026-10-18 16:00:41,976  INFO         Saved: odisha_pre_vs_post_rvm.png & odisha_pre_vs_post_rvm.pdf
+2026-10-18 16:00:41,976  INFO         Pre N=256, Post N=84, Pre mu=0.1789, Post mu=0.1142, Delta=-0.0648
+2026-10-18 16:00:41,976  INFO  [10/14] Processing PUNJAB ...
+2026-10-18 16:00:43,911  INFO         Saved: punjab_pre_vs_post_rvm.png & punjab_pre_vs_post_rvm.pdf
+2026-10-18 16:00:43,911  INFO         Pre N=162, Post N=52, Pre mu=0.1407, Post mu=0.0716, Delta=-0.0691
+2026-10-18 16:00:43,911  INFO  [11/14] Processing RAJASTHAN ...
+2026-10-18 16:00:45,902  INFO         Saved: rajasthan_pre_vs_post_rvm.png & rajasthan_pre_vs_post_rvm.pdf
+2026-10-18 16:00:45,902  INFO         Pre N=304, Post N=100, Pre mu=0.1653, Post mu=0.1807, Delta=+0.0154
+2026-10-18 16:00:45,902  INFO  [12/14] Processing TAMIL NADU ...
+2026-10-18 16:00:47,862  INFO         Saved: tamil_nadu_pre_vs_post_rvm.png & tamil_nadu_pre_vs_post_rvm.pdf
+2026-10-18 16:00:47,862  INFO         Pre N=524, Post N=155, Pre mu=0.1696, Post mu=0.1717, Delta=+0.0021
+2026-10-18 16:00:47,862  INFO  [13/14] Processing UTTAR PRADESH ...
+2026-10-18 16:00:50,025  INFO         Saved: uttar_pradesh_pre_vs_post_rvm.png & uttar_pradesh_pre_vs_post_rvm.pdf
+2026-10-18 16:00:50,026  INFO         Pre N=1071, Post N=317, Pre mu=0.1642, Post mu=0.1288, Delta=-0.0354
+2026-10-18 16:00:50,026  INFO  [14/14] Processing WEST BENGAL ...
+2026-10-18 16:00:52,239  INFO         Saved: west_bengal_pre_vs_post_rvm.png & west_bengal_pre_vs_post_rvm.pdf
+2026-10-18 16:00:52,239  INFO         Pre N=506, Post N=168, Pre mu=0.1261, Post mu=0.1274, Delta=+0.0012
+2026-10-18 16:00:52,242  INFO  
+  ✓ Detailed state-wise metrics saved: D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\tables\statewise_rvm_detailed_metrics.csv
+2026-10-18 16:00:52,245  INFO    ✓ Comprehensive report saved: D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\reports\statewise_rvm_analysis_report.md
+2026-10-18 16:00:52,250  INFO    ✓ Metadata saved: D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\logs\statewise_metadata.json
+2026-10-18 16:00:52,250  INFO  
+======================================================================
+2026-10-18 16:00:52,250  INFO    STATE-WISE RVM ANALYSIS COMPLETE!
+2026-10-18 16:00:52,250  INFO    - 14 Comparison Figures saved in: D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\figures\statewise
+2026-10-18 16:00:52,251  INFO    - Tables saved in: D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\tables
+2026-10-18 16:00:52,251  INFO    - Report saved in: D:\sem-5_projects\PRJ-3\outputs\pre vs post evm analysis\reports\statewise_rvm_analysis_report.md
+2026-10-18 16:00:52,251  INFO  ======================================================================

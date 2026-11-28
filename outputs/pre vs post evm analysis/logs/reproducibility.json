@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-10-18T15:41:46.320448",
+  "python_version": "3.13.2",
+  "numpy_version": "2.2.6",
+  "pandas_version": "2.3.3",
+  "args": {
+    "data": "D:\\sem-5_projects\\PRJ-3\\data\\processed\\final_20const_14states.csv",
+    "runs": 25,
+    "dpi": 600,
+    "seed": 42
+  },
+  "data_sha256": "25159606e08492da588f55c52b4997790d6a6ff75217a0b9769bbb77f0a008d8",
+  "pre_evm_years": [
+    

@@ -1,0 +1,15 @@
+state,n_pre,n_post,n_total,pre_sufficient,post_sufficient,overall_status,notes
+ANDHRA PRADESH,168,151,319,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+ASSAM,56,56,112,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+BIHAR,214,160,374,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+GUJARAT,104,104,208,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+KARNATAKA,112,112,224,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+KERALA,80,80,160,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+MADHYA PRADESH,160,116,276,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+MAHARASHTRA,192,192,384,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+ODISHA,84,84,168,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+PUNJAB,39,52,91,True,True,Adequate (Marginal Sample),"Pre-EVM N=39 slightly under 50 due to 1991 cancellation (Punjab), but >30 for CLT."
+RAJASTHAN,100,100,200,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+TAMIL NADU,156,155,311,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+UTTAR PRADESH,339,317,656,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.
+WEST BENGAL,168,168,336,True,True,Fully Sufficient (N >= 50),Robust sample size for non-parametric and RVM tests.

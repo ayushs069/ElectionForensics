@@ -1,0 +1,142 @@
+2026-10-18 15:38:43,020  INFO  =================================================================
+2026-10-18 15:38:43,020  INFO    Pre-EVM vs Post-EVM Indian Parliamentary Election Analysis
+2026-10-18 15:38:43,020  INFO  =================================================================
+2026-10-18 15:38:43,020  INFO    Data    : D:\sem-5_projects\PRJ-3\data\processed\final_20const_14states.csv
+2026-10-18 15:38:43,020  INFO    RVM runs: 25   DPI: 600   Seed: 42
+2026-10-18 15:38:43,020  INFO  
+Loading and splitting data ...
+2026-10-18 15:38:43,054  INFO  Dropped 0 invalid rows; 7,997 remain
+2026-10-18 15:38:43,054  INFO  All years in dataset: [np.int64(1951), np.int64(1957), np.int64(1962), np.int64(1967), np.int64(1971), np.int64(1977), np.int64(1980), np.int64(1984), np.int64(1985), np.int64(1989), np.int64(1991), np.int64(1992), np.int64(1996), np.int64(1998), np.int64(1999), np.int64(2004), np.int64(2009), np.int64(2014), np.int64(2019)]
+2026-10-18 15:38:43,055  INFO  Pre-EVM  years present : [np.int64(1951), np.int64(1957), np.int64(1962), np.int64(1967), np.int64(1971), np.int64(1977), np.int64(1980), np.int64(1984), np.int64(1989), np.int64(1991), np.int64(1996), np.int64(1998), np.int64(1999)]
+2026-10-18 15:38:43,055  INFO  Post-EVM years present : [np.int64(2004), np.int64(2009), np.int64(2014), np.int64(2019)]
+2026-10-18 15:38:43,055  INFO  Excluded years         : [np.int64(1985), np.int64(1992)]
+2026-10-18 15:38:43,055  INFO  Other/unclassified     : []
+2026-10-18 15:38:43,060  INFO  States (14): ['ANDHRA PRADESH', 'ASSAM', 'BIHAR', 'GUJARAT', 'KARNATAKA', 'KERALA', 'MADHYA PRADESH', 'MAHARASHTRA', 'ODISHA', 'PUNJAB', 'RAJASTHAN', 'TAMIL NADU', 'UTTAR PRADESH', 'WEST BENGAL']
+2026-10-18 15:38:43,060  INFO  Pre-EVM  rows : 6,110  (13 elections)
+2026-10-18 15:38:43,060  INFO  Post-EVM rows : 1,847  (4 elections)
+2026-10-18 15:38:43,060  INFO  
+Computing pooled statistics ...
+2026-10-18 15:38:43,085  INFO    Pre  mean μ : 0.164526  (n=6,110)
+2026-10-18 15:38:43,086  INFO    Post mean μ : 0.132732  (n=1,847)
+2026-10-18 15:38:43,086  INFO    Relative Δ  : -19.32%
+2026-10-18 15:38:43,086  INFO    Cohen's d   : 0.2433
+2026-10-18 15:38:43,087  INFO    KS p-value  : 4.8403e-13
+2026-10-18 15:38:43,087  INFO    MW  p-value : 1.1829e-12
+2026-10-18 15:38:43,087  INFO  
+Running pooled RVM simulations ...
+2026-10-18 15:38:46,561  INFO  
+Per-state analysis ...
+2026-10-18 15:38:46,884  INFO    ANDHRA PRADESH: n_pre=512, n_post=151, μ_pre=0.1568, μ_post=0.0943, Δμ=-0.0625, KS_p=1.749e-05
+2026-10-18 15:38:46,984  INFO    ASSAM: n_pre=130, n_post=56, μ_pre=0.1877, μ_post=0.1155, Δμ=-0.0722, KS_p=3.980e-04
+2026-10-18 15:38:47,597  INFO    BIHAR: n_pre=678, n_post=160, μ_pre=0.1798, μ_post=0.1395, Δμ=-0.0402, KS_p=7.609e-03
+2026-10-18 15:38:48,170  INFO    GUJARAT: n_pre=285, n_post=104, μ_pre=0.1619, μ_post=0.1772, Δμ=+0.0152, KS_p=5.189e-01
+2026-10-18 15:38:48,554  INFO    KARNATAKA: n_pre=335, n_post=112, μ_pre=0.1800, μ_post=0.0931, Δμ=-0.0869, KS_p=2.788e-09
+2026-10-18 15:38:48,706  INFO    KERALA: n_pre=243, n_post=80, μ_pre=0.0949, μ_post=0.0829, Δμ=-0.0120, KS_p=3.708e-01
+2026-10-18 15:38:48,935  INFO    MADHYA PRADESH: n_pre=491, n_post=116, μ_pre=0.1710, μ_post=0.1762, Δμ=+0.0053, KS_p=6.895e-01
+2026-10-18 15:38:49,255  INFO    MAHARASHTRA: n_pre=613, n_post=192, μ_pre=0.1922, μ_post=0.1352, Δμ=-0.0570, KS_p=5.221e-04
+2026-10-18 15:38:49,400  INFO    ODISHA: n_pre=256, n_post=84, μ_pre=0.1789, μ_post=0.1142, Δμ=-0.0648, KS_p=1.978e-04
+2026-10-18 15:38:49,486  INFO    PUNJAB: n_pre=162, n_post=52, μ_pre=0.1407, μ_post=0.0716, Δμ=-0.0691, KS_p=8.168e-04
+2026-10-18 15:38:49,771  INFO    RAJASTHAN: n_pre=304, n_post=100, μ_pre=0.1653, μ_post=0.1807, Δμ=+0.0154, KS_p=1.099e-01
+2026-10-18 15:38:50,020  INFO    TAMIL NADU: n_pre=524, n_post=155, μ_pre=0.1696, μ_post=0.1717, Δμ=+0.0021, KS_p=5.035e-03
+2026-10-18 15:38:50,518  INFO    UTTAR PRADESH: n_pre=1071, n_post=317, μ_pre=0.1642, μ_post=0.1288, Δμ=-0.0354, KS_p=2.960e-03
+2026-10-18 15:38:50,760  INFO    WEST BENGAL: n_pre=506, n_post=168, μ_pre=0.1261, μ_post=0.1274, Δμ=+0.0012, KS_p=6.875e-02
+2026-10-18 15:38:51,075  INFO    ✓ Tables saved
+2026-10-18 15:38:52,156  INFO    ✓ Derived data saved
+2026-10-18 15:38:52,156  INFO  
+Generating figures ...
+2026-10-18 15:39:34,077  INFO  
+Writing Markdown report ...
+2026-10-18 15:39:58,709  INFO  =================================================================
+2026-10-18 15:39:58,709  INFO    Pre-EVM vs Post-EVM Indian Parliamentary Election Analysis
+2026-10-18 15:39:58,709  INFO  =================================================================
+2026-10-18 15:39:58,710  INFO    Data    : D:\sem-5_projects\PRJ-3\data\processed\final_20const_14states.csv
+2026-10-18 15:39:58,710  INFO    RVM runs: 25   DPI: 600   Seed: 42
+2026-10-18 15:39:58,710  INFO  
+Loading and splitting data ...
+2026-10-18 15:39:58,775  INFO  Dropped 0 invalid rows; 7,997 remain
+2026-10-18 15:39:58,775  INFO  All years in dataset: [np.int64(1951), np.int64(1957), np.int64(1962), np.int64(1967), np.int64(1971), np.int64(1977), np.int64(1980), np.int64(1984), np.int64(1985), np.int64(1989), np.int64(1991), np.int64(1992), np.int64(1996), np.int64(1998), np.int64(1999), np.int64(2004), np.int64(2009), np.int64(2014), np.int64(2019)]
+2026-10-18 15:39:58,775  INFO  Pre-EVM  years present : [np.int64(1951), np.int64(1957), np.int64(1962), np.int64(1967), np.int64(1971), np.int64(1977), np.int64(1980), np.int64(1984), np.int64(1989), np.int64(1991), np.int64(1996), np.int64(1998), np.int64(1999)]
+2026-10-18 15:39:58,775  INFO  Post-EVM years present : [np.int64(2004), np.int64(2009), np.int64(2014), np.int64(2019)]
+2026-10-18 15:39:58,775  INFO  Excluded years         : [np.int64(1985), np.int64(1992)]
+2026-10-18 15:39:58,775  INFO  Other/unclassified     : []
+2026-10-18 15:39:58,778  INFO  States (14): ['ANDHRA PRADESH', 'ASSAM', 'BIHAR', 'GUJARAT', 'KARNATAKA', 'KERALA', 'MADHYA PRADESH', 'MAHARASHTRA', 'ODISHA', 'PUNJAB', 'RAJASTHAN', 'TAMIL NADU', 'UTTAR PRADESH', 'WEST BENGAL']
+2026-10-18 15:39:58,778  INFO  Pre-EVM  rows : 6,110  (13 elections)
+2026-10-18 15:39:58,778  INFO  Post-EVM rows : 1,847  (4 elections)
+2026-10-18 15:39:58,778  INFO  
+Computing pooled statistics ...
+2026-10-18 15:39:58,795  INFO    Pre  mean μ : 0.164526  (n=6,110)
+2026-10-18 15:39:58,862  INFO    Post mean μ : 0.132732  (n=1,847)
+2026-10-18 15:39:58,862  INFO    Relative Δ  : -19.32%
+2026-10-18 15:39:58,863  INFO    Cohen's d   : 0.2433
+2026-10-18 15:39:58,863  INFO    KS p-value  : 4.8403e-13
+2026-10-18 15:39:58,863  INFO    MW  p-value : 1.1829e-12
+2026-10-18 15:39:58,863  INFO  
+Running pooled RVM simulations ...
+2026-10-18 15:40:01,414  INFO  
+Per-state analysis ...
+2026-10-18 15:40:01,620  INFO    ANDHRA PRADESH: n_pre=512, n_post=151, μ_pre=0.1568, μ_post=0.0943, Δμ=-0.0625, KS_p=1.749e-05
+2026-10-18 15:40:01,687  INFO    ASSAM: n_pre=130, n_post=56, μ_pre=0.1877, μ_post=0.1155, Δμ=-0.0722, KS_p=3.980e-04
+2026-10-18 15:40:01,960  INFO    BIHAR: n_pre=678, n_post=160, μ_pre=0.1798, μ_post=0.1395, Δμ=-0.0402, KS_p=7.609e-03
+2026-10-18 15:40:02,091  INFO    GUJARAT: n_pre=285, n_post=104, μ_pre=0.1619, μ_post=0.1772, Δμ=+0.0152, KS_p=5.189e-01
+2026-10-18 15:40:02,242  INFO    KARNATAKA: n_pre=335, n_post=112, μ_pre=0.1800, μ_post=0.0931, Δμ=-0.0869, KS_p=2.788e-09
+2026-10-18 15:40:02,351  INFO    KERALA: n_pre=243, n_post=80, μ_pre=0.0949, μ_post=0.0829, Δμ=-0.0120, KS_p=3.708e-01
+2026-10-18 15:40:02,558  INFO    MADHYA PRADESH: n_pre=491, n_post=116, μ_pre=0.1710, μ_post=0.1762, Δμ=+0.0053, KS_p=6.895e-01
+2026-10-18 15:40:02,821  INFO    MAHARASHTRA: n_pre=613, n_post=192, μ_pre=0.1922, μ_post=0.1352, Δμ=-0.0570, KS_p=5.221e-04
+2026-10-18 15:40:02,937  INFO    ODISHA: n_pre=256, n_post=84, μ_pre=0.1789, μ_post=0.1142, Δμ=-0.0648, KS_p=1.978e-04
+2026-10-18 15:40:03,025  INFO    PUNJAB: n_pre=162, n_post=52, μ_pre=0.1407, μ_post=0.0716, Δμ=-0.0691, KS_p=8.168e-04
+2026-10-18 15:40:03,217  INFO    RAJASTHAN: n_pre=304, n_post=100, μ_pre=0.1653, μ_post=0.1807, Δμ=+0.0154, KS_p=1.099e-01
+2026-10-18 15:40:03,502  INFO    TAMIL NADU: n_pre=524, n_post=155, μ_pre=0.1696, μ_post=0.1717, Δμ=+0.0021, KS_p=5.035e-03
+2026-10-18 15:40:04,065  INFO    UTTAR PRADESH: n_pre=1071, n_post=317, μ_pre=0.1642, μ_post=0.1288, Δμ=-0.0354, KS_p=2.960e-03
+2026-10-18 15:40:04,295  INFO    WEST BENGAL: n_pre=506, n_post=168, μ_pre=0.1261, μ_post=0.1274, Δμ=+0.0012, KS_p=6.875e-02
+2026-10-18 15:40:04,304  INFO    ✓ Tables saved
+2026-10-18 15:40:04,393  INFO    ✓ Derived data saved
+2026-10-18 15:40:04,396  INFO  
+Generating figures ...
+2026-10-18 15:41:13,106  INFO  =================================================================
+2026-10-18 15:41:13,106  INFO    Pre-EVM vs Post-EVM Indian Parliamentary Election Analysis
+2026-10-18 15:41:13,106  INFO  =================================================================
+2026-10-18 15:41:13,106  INFO    Data    : D:\sem-5_projects\PRJ-3\data\processed\final_20const_14states.csv
+2026-10-18 15:41:13,106  INFO    RVM runs: 25   DPI: 600   Seed: 42
+2026-10-18 15:41:13,106  INFO  
+Loading and splitting data ...
+2026-10-18 15:41:13,142  INFO  Dropped 0 invalid rows; 7,997 remain
+2026-10-18 15:41:13,150  INFO  All years in dataset: [np.int64(1951), np.int64(1957), np.int64(1962), np.int64(1967), np.int64(1971), np.int64(1977), np.int64(1980), np.int64(1984), np.int64(1985), np.int64(1989), np.int64(1991), np.int64(1992), np.int64(1996), np.int64(1998), np.int64(1999), np.int64(2004), np.int64(2009), np.int64(2014), np.int64(2019)]
+2026-10-18 15:41:13,151  INFO  Pre-EVM  years present : [np.int64(1951), np.int64(1957), np.int64(1962), np.int64(1967), np.int64(1971), np.int64(1977), np.int64(1980), np.int64(1984), np.int64(1989), np.int64(1991), np.int64(1996), np.int64(1998), np.int64(1999)]
+2026-10-18 15:41:13,151  INFO  Post-EVM years present : [np.int64(2004), np.int64(2009), np.int64(2014), np.int64(2019)]
+2026-10-18 15:41:13,151  INFO  Excluded years         : [np.int64(1985), np.int64(1992)]
+2026-10-18 15:41:13,151  INFO  Other/unclassified     : []
+2026-10-18 15:41:13,154  INFO  States (14): ['ANDHRA PRADESH', 'ASSAM', 'BIHAR', 'GUJARAT', 'KARNATAKA', 'KERALA', 'MADHYA PRADESH', 'MAHARASHTRA', 'ODISHA', 'PUNJAB', 'RAJASTHAN', 'TAMIL NADU', 'UTTAR PRADESH', 'WEST BENGAL']
+2026-10-18 15:41:13,154  INFO  Pre-EVM  rows : 6,110  (13 elections)
+2026-10-18 15:41:13,154  INFO  Post-EVM rows : 1,847  (4 elections)
+2026-10-18 15:41:13,154  INFO  
+Computing pooled statistics ...
+2026-10-18 15:41:13,170  INFO    Pre  mean mu : 0.164526  (n=6,110)
+2026-10-18 15:41:13,170  INFO    Post mean mu : 0.132732  (n=1,847)
+2026-10-18 15:41:13,170  INFO    Relative delta : -19.32%
+2026-10-18 15:41:13,170  INFO    Cohen's d      : 0.2433
+2026-10-18 15:41:13,170  INFO    KS p-value     : 4.8403e-13
+2026-10-18 15:41:13,170  INFO    MW  p-value    : 1.1829e-12
+2026-10-18 15:41:13,170  INFO  
+Running pooled RVM simulations ...
+2026-10-18 15:41:15,643  INFO  
+Per-state analysis ...
+2026-10-18 15:41:15,850  INFO    ANDHRA PRADESH: n_pre=512, n_post=151, mu_pre=0.1568, mu_post=0.0943, delta=-0.0625, KS_p=1.749e-05
+2026-10-18 15:41:15,914  INFO    ASSAM: n_pre=130, n_post=56, mu_pre=0.1877, mu_post=0.1155, delta=-0.0722, KS_p=3.980e-04
+2026-10-18 15:41:16,174  INFO    BIHAR: n_pre=678, n_post=160, mu_pre=0.1798, mu_post=0.1395, delta=-0.0402, KS_p=7.609e-03
+2026-10-18 15:41:16,300  INFO    GUJARAT: n_pre=285, n_post=104, mu_pre=0.1619, mu_post=0.1772, delta=+0.0152, KS_p=5.189e-01
+2026-10-18 15:41:16,441  INFO    KARNATAKA: n_pre=335, n_post=112, mu_pre=0.1800, mu_post=0.0931, delta=-0.0869, KS_p=2.788e-09
+2026-10-18 15:41:16,546  INFO    KERALA: n_pre=243, n_post=80, mu_pre=0.0949, mu_post=0.0829, delta=-0.0120, KS_p=3.708e-01
+2026-10-18 15:41:16,734  INFO    MADHYA PRADESH: n_pre=491, n_post=116, mu_pre=0.1710, mu_post=0.1762, delta=+0.0053, KS_p=6.895e-01
+2026-10-18 15:41:16,982  INFO    MAHARASHTRA: n_pre=613, n_post=192, mu_pre=0.1922, mu_post=0.1352, delta=-0.0570, KS_p=5.221e-04
+2026-10-18 15:41:17,091  INFO    ODISHA: n_pre=256, n_post=84, mu_pre=0.1789, mu_post=0.1142, delta=-0.0648, KS_p=1.978e-04
+2026-10-18 15:41:17,163  INFO    PUNJAB: n_pre=162, n_post=52, mu_pre=0.1407, mu_post=0.0716, delta=-0.0691, KS_p=8.168e-04
+2026-10-18 15:41:17,294  INFO    RAJASTHAN: n_pre=304, n_post=100, mu_pre=0.1653, mu_post=0.1807, delta=+0.0154, KS_p=1.099e-01
+2026-10-18 15:41:17,509  INFO    TAMIL NADU: n_pre=524, n_post=155, mu_pre=0.1696, mu_post=0.1717, delta=+0.0021, KS_p=5.035e-03
+2026-10-18 15:41:17,942  INFO    UTTAR PRADESH: n_pre=1071, n_post=317, mu_pre=0.1642, mu_post=0.1288, delta=-0.0354, KS_p=2.960e-03
+2026-10-18 15:41:18,156  INFO    WEST BENGAL: n_pre=506, n_post=168, mu_pre=0.1261, mu_post=0.1274, delta=+0.0012, KS_p=6.875e-02
+2026-10-18 15:41:18,160  INFO    ✓ Tables saved
+2026-10-18 15:41:18,234  INFO    ✓ Derived data saved
+2026-10-18 15:41:18,234  INFO  
+Generating figures ...
+2026-10-18 15:41:46,319  INFO  
+Writing Markdown report ...

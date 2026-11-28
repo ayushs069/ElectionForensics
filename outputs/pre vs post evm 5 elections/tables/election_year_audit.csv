@@ -1,0 +1,15 @@
+state,pre_elections_count,pre_elections_years,pre_missing_years,post_elections_count,post_elections_years,post_missing_years,historical_context
+ANDHRA PRADESH,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,Telangana carved out in 2014; residual AP seats (25) reflected in 2019 and 2024.
+ASSAM,4,"1991, 1996, 1998, 1999",1989,5,"2004, 2009, 2014, 2019, 2024",None,1989 elections postponed in Assam due to political unrest; held in 1991.
+BIHAR,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,"Bifurcated in Nov 2000 (Jharkhand, Chhattisgarh, Uttarakhand carved out); seat count adjusted post-2000."
+GUJARAT,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,Surat constituency won uncontested in 2024 (25 contested seats analyzed in 2024).
+KARNATAKA,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,Continuous coverage across all 5 elections in both eras.
+KERALA,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,Continuous coverage across all 5 elections in both eras.
+MADHYA PRADESH,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,"Bifurcated in Nov 2000 (Jharkhand, Chhattisgarh, Uttarakhand carved out); seat count adjusted post-2000."
+MAHARASHTRA,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,Continuous coverage across all 5 elections in both eras.
+ODISHA,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,Continuous coverage across all 5 elections in both eras.
+PUNJAB,4,"1989, 1996, 1998, 1999",1991,5,"2004, 2009, 2014, 2019, 2024",None,1991 general elections cancelled due to militancy; held in 1992.
+RAJASTHAN,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,Continuous coverage across all 5 elections in both eras.
+TAMIL NADU,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,Continuous coverage across all 5 elections in both eras.
+UTTAR PRADESH,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,"Bifurcated in Nov 2000 (Jharkhand, Chhattisgarh, Uttarakhand carved out); seat count adjusted post-2000."
+WEST BENGAL,5,"1989, 1991, 1996, 1998, 1999",None,5,"2004, 2009, 2014, 2019, 2024",None,Continuous coverage across all 5 elections in both eras.

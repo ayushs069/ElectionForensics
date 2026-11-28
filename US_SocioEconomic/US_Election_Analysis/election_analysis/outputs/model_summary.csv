@@ -1,0 +1,11 @@
+Metric,Value
+N counties,3141
+Dem wins,554
+Rep wins,2587
+Mean Dem Margin,-31.39 pp
+Median Turnout,0.499
+OLS R² (Dem Margin),0.718
+CV R² (Dem Margin),0.668
+OLS R² (Turnout),0.492
+CV R² (Turnout),0.450
+Logistic CV Accuracy (Dem Win),0.907

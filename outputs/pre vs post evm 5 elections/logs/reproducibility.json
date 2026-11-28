@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-11-15T00:25:57.436783",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python_version": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "input_dataset": "data\\processed\\alltime_csv_india.csv",
+  "pre_evm_years": [
+    1989,
+    1991,
+    1996,
+    1998,
+    1999
+  ],
+  "post_evm_years": [
+    2004,
+    2009,
+    2014,
+    2019,
+    2024
+  ],
+  "target_states": [
+    "ANDHRA PRADESH",
+    "ASSAM",
+    "BIHAR",
+    "GUJARAT",
+    "KARNATAKA",
+    "KERALA",
+    "MADHYA PRADESH",
+    "MAHARASHTRA",
+    "ODISHA",
+    "PUNJAB",
+    "RAJASTHAN",
+    "TAMIL NADU",
+    "UTTAR PRADESH",
+    "WEST BENGAL"
+  ],
+  "parameters": {
+    "runs": 25,
+    "dpi": 300,
+    "seed": 42
+  },
+  "pooled_14states_summary": {
+    "n_pre": 2455,
+    "n_post": 2296,
+    "mean_pre": 0.12227211195282431,
+    "mean_post": 0.13246848603916678,
+    "delta_mu": 0.010196374086342469,
+    "rel_change_pct": 8.339083968940104,
+    "cohens_d": 0.09666293373797588,
+    "ks_p": 0.0007758114921348984
+  },
+  "pooled_allindia_summary": {
+    "n_pre": 2455,
+    "n_post": 2389,
+    "mean_pre": 0.12227211195282431,
+    "mean_post": 0.13335227577582381,
+    "delta_mu": 0.011080163822999506,
+    "rel_change_pct": 9.06188962146537,
+    "cohens_d": 0.10493201325567747,
+    "ks_p": 0.00023447593763035933
+  }
+}

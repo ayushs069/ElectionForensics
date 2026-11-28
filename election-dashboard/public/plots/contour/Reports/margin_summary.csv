@@ -1,0 +1,20 @@
+state,year,n_matched,n_unmatched,highest_cst,highest_margin,highest_gis,lowest_cst,lowest_margin,lowest_gis,boundary
+Uttar Pradesh,1951,64,5,BASTI DISTRICT (NORTH),105510,Basti,GHAZIPUR DISTT (EAST) CUM BALLIA DISTRICT SOUTH (WEST),402,Ghazipur,pre2008
+West Bengal,1951,19,7,MURSHIDABAD,72231,Murshidabad,CONTAI,127,Contai,pre2008
+West Bengal,1957,22,6,NABADWIP,49104,Nabadwip,BANKURA,1686,Bankura,pre2008
+West Bengal,1962,31,5,BARRACKPORE,94424,Barrackpore,HOOGHLY,2643,Hooghly,pre2008
+West Bengal,1967,38,2,TAMLUK,150324,Tamluk,ALIPURDUARS,587,Alipurduars,pre2008
+West Bengal,1971,38,2,AUSGRAM,90912,Jhargram,MATHURAPUR,1585,Mathurapur,pre2008
+West Bengal,1977,41,1,ARAMBAGH,207437,Arambagh,JANGIPUR,2186,Jangipur,pre2008
+West Bengal,1980,41,1,DUM DUM,165672,Dum Dum,RAIGANJ,1305,Raiganj,pre2008
+West Bengal,1984,41,1,KOLKATA NORTH WEST,132422,Calcutta North West,DARJEELING,1389,Darjeeling,pre2008
+West Bengal,1989,41,1,DURGAPUR,262624,Durgapur,HOWRAH,1432,Howrah,pre2008
+West Bengal,1991,41,1,BOLPUR,226624,Bolpur,TAMLUK,1062,Tamluk,pre2008
+West Bengal,1996,41,1,JHARGRAM,347264,Jhargram,SRERAMPUR,5463,Serampore,pre2008
+West Bengal,1998,41,1,JHARGRAM,287188,Jhargram,HOOGHLY,6116,Hooghly,pre2008
+West Bengal,1999,41,1,BURDWAN,301683,Burdwan,CONTAI,12133,Contai,pre2008
+West Bengal,2004,41,1,ARAMBAGH,592502,Arambagh,NABADWIP,9991,Nabadwip,pre2008
+West Bengal,2009,42,0,JHARGRAM,292345,Jhargram,BALURGHAT,5105,Balurghat,post2008
+West Bengal,2014,42,0,BAHARAMPUR,356567,Baharampur,RAIGANJ,1634,Raiganj,post2008
+West Bengal,2019,42,0,DARJEELING,413443,Darjeeling,ARAMBAGH,1142,Arambag,post2008
+West Bengal,2024,42,0,DIAMOND HARBOUR,710930,Diamond Harbour,BISHNUPUR,5567,Bishnupur,post2008

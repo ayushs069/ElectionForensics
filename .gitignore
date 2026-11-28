@@ -21,6 +21,16 @@ __pycache__/
 data/raw/*.xlsx
 data/raw/*.csv
 !data/raw/.gitkeep
+Z_CSES_Data/CSES_data/cses_imd.csv
+
+# Archives & external cloned repos
+*.zip
+india-constituency-maps/
+
+# Frontend build & dependencies
+node_modules/
+election-dashboard/node_modules/
+election-dashboard/dist/
 
 # Analysis outputs (optional to ignore, but often kept out of Git if large)
 # outputs/
